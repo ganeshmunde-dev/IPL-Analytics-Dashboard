@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Season 19 Analytics Hub | 2026 Statistics</title>
+    <meta name="description" content="Comprehensive IPL Season 19 (2026) analytics dashboard with full tournament statistics, visualizations, and data exports.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════ -->
+<nav class="navbar" id="navbar">
+    <div class="logo">
+        <i class="fa-solid fa-trophy"></i>
+        <span>IPL 19 <span class="highlight">Analytics Hub</span></span>
+    </div>
+    <button class="nav-toggle" id="navToggle"><i class="fa-solid fa-bars"></i></button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#hero"          class="nav-link active">Overview</a></li>
+        <li><a href="#statistics"    class="nav-link">Statistics</a></li>
+        <li><a href="#deep-stats"    class="nav-link">Deep Stats</a></li>
+        <li><a href="#teams"         class="nav-link">Teams</a></li>
+        <li><a href="#awards"        class="nav-link">Awards</a></li>
+        <li><a href="#visualizations"class="nav-link">Charts</a></li>
+        <li><a href="#export"        class="nav-link nav-export">Export Data</a></li>
+    </ul>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════ -->
+<header id="hero" class="hero">
+    <div class="hero-bg-glow glow-left"></div>
+    <div class="hero-bg-glow glow-right"></div>
+    <div class="hero-content">
+        <div class="hero-badge"><i class="fa-solid fa-circle pulse-dot"></i> IPL 2026 &bull; Season 19 &bull; Final Report</div>
+        <h1 class="hero-title">IPL Season 19<br><span class="highlight">Analytics Hub</span></h1>
+        <p class="hero-subtitle">Every Run. Every Ball. Every Insight.<br>The most comprehensive IPL 2026 data platform.</p>
+        <div class="hero-quick-stats">
+            <div class="hqs-item pulse-glow" data-animate="fade-up" style="animation-delay:100ms;">
+                <span class="hqs-label">MATCHES</span>
+                <span class="hqs-value highlight" id="hqs-matches">74</span>
+            </div>
+            <div class="hqs-divider"></div>
+            <div class="hqs-item pulse-glow" data-animate="fade-up" style="animation-delay:200ms;">
+                <span class="hqs-label">TOTAL RUNS</span>
+                <span class="hqs-value highlight" id="hqs-runs">24,500</span>
+            </div>
+            <div class="hqs-divider"></div>
+            <div class="hqs-item pulse-glow" data-animate="fade-up" style="animation-delay:300ms;">
+                <span class="hqs-label">WICKETS</span>
+                <span class="hqs-value highlight" id="hqs-wickets">850</span>
+            </div>
+            <div class="hqs-divider"></div>
+            <div class="hqs-item pulse-glow" data-animate="fade-up" style="animation-delay:400ms;">
+                <span class="hqs-label">SIXES</span>
+                <span class="hqs-value highlight" id="hqs-sixes">1,150</span>
+            </div>
+        </div>
+        <div class="cta-group">
+            <a href="#statistics"     class="btn btn-primary"><i class="fa-solid fa-chart-bar"></i> Explore Analytics</a>
+            <a href="#export"         class="btn btn-secondary"><i class="fa-solid fa-file-excel"></i> Download Data</a>
+        </div>
+    </div>
+    <div class="hero-scroll-hint"><i class="fa-solid fa-chevron-down"></i></div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     KEY STATS CARDS
+═══════════════════════════════════════════ -->
+<section id="statistics" class="section">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">Season 19</span>
+            <h2 class="section-title">Tournament <span class="highlight">Statistics</span></h2>
+            <p class="section-desc">Comprehensive aggregate numbers across all 74 matches of the Indian Premier League Season 19.</p>
+        </div>
+
+        <div class="stats-grid" id="statsGrid">
+            <div class="stat-card glass-panel" data-key="total_matches" data-animate="fade-up" style="animation-delay:100ms;">
+                <div class="stat-icon"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="74">74</div>
+                    <div class="stat-label">Total Matches</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_runs" data-animate="fade-up" style="animation-delay:200ms;">
+                <div class="stat-icon purple"><i class="fa-solid fa-bolt"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="24500">24,500</div>
+                    <div class="stat-label">Total Runs</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_wickets" data-animate="fade-up" style="animation-delay:300ms;">
+                <div class="stat-icon cyan"><i class="fa-solid fa-bullseye"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="850">850</div>
+                    <div class="stat-label">Total Wickets</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_sixes" data-animate="fade-up" style="animation-delay:400ms;">
+                <div class="stat-icon gold"><i class="fa-solid fa-rocket"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="1150">1,150</div>
+                    <div class="stat-label">Total Sixes</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_fours" data-animate="fade-up" style="animation-delay:500ms;">
+                <div class="stat-icon"><i class="fa-solid fa-border-all"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="2100">2,100</div>
+                    <div class="stat-label">Total Fours</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_balls" data-animate="fade-up" style="animation-delay:600ms;">
+                <div class="stat-icon purple"><i class="fa-solid fa-circle"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="17405">17,405</div>
+                    <div class="stat-label">Total Balls</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_dot_balls" data-animate="fade-up" style="animation-delay:700ms;">
+                <div class="stat-icon cyan"><i class="fa-solid fa-ban"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="6000">6,000</div>
+                    <div class="stat-label">Dot Balls</div>
+                </div>
+            </div>
+            <div class="stat-card glass-panel" data-key="total_extras" data-animate="fade-up" style="animation-delay:800ms;">
+                <div class="stat-icon gold"><i class="fa-solid fa-plus-circle"></i></div>
+                <div class="stat-info">
+                    <div class="stat-value counter" data-target="1200">1,200</div>
+                    <div class="stat-label">Total Extras</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     DEEP STATS — ALL 17 METRICS
+═══════════════════════════════════════════ -->
+<section id="deep-stats" class="section" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">Advanced Data</span>
+            <h2 class="section-title">Deep <span class="highlight">Analysis</span></h2>
+            <p class="section-desc">Breakdown of performance indicators and granular metrics calculated across the entire tournament.</p>
+        </div>
+
+        <!-- KPI Row -->
+        <div class="kpi-row">
+            <div class="kpi-card glass-panel" data-animate="zoom-in" style="animation-delay:100ms;">
+                <div class="kpi-icon"><i class="fa-solid fa-tachometer-alt"></i></div>
+                <div class="kpi-body">
+                    <div class="kpi-value" id="kpi-rr">8.45</div>
+                    <div class="kpi-label">Avg Run Rate</div>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel" data-animate="zoom-in" style="animation-delay:200ms;">
+                <div class="kpi-icon purple"><i class="fa-solid fa-percent"></i></div>
+                <div class="kpi-body">
+                    <div class="kpi-value" id="kpi-sr">140.8</div>
+                    <div class="kpi-label">Overall Strike Rate</div>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel" data-animate="zoom-in" style="animation-delay:300ms;">
+                <div class="kpi-icon cyan"><i class="fa-solid fa-chart-pie"></i></div>
+                <div class="kpi-body">
+                    <div class="kpi-value" id="kpi-bdry">59%</div>
+                    <div class="kpi-label">Boundary Runs %</div>
+                </div>
+            </div>
+            <div class="kpi-card glass-panel" data-animate="zoom-in" style="animation-delay:400ms;">
+                <div class="kpi-icon gold"><i class="fa-solid fa-crosshairs"></i></div>
+                <div class="kpi-body">
+                    <div class="kpi-value" id="kpi-bpw">20.5</div>
+                    <div class="kpi-label">Balls Per Wicket</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full stats table -->
+        <div class="table-container glass-panel" style="margin-top: 40px;" data-animate="fade-up">
+            <h3 style="padding: 24px; border-bottom: 1px solid var(--glass-border); display:flex; align-items:center; gap:10px;">
+                <i class="fa-solid fa-table highlight"></i> Complete Metrics Breakdown
+            </h3>
+            <div class="stats-table-grid" id="statsTableGrid">
+                <!-- Batting Section -->
+                <div class="table-section-title"><i class="fa-solid fa-baseball-bat-ball"></i> Batting Metrics</div>
+
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-circle-dot icon-blue"></i> Total Matches</div>
+                    <div class="tr-value" id="tbl-matches">74</div>
+                    <div class="tr-per">— / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-rotate icon-purple"></i> Total Overs</div>
+                    <div class="tr-value" id="tbl-overs">2,900.5</div>
+                    <div class="tr-per" id="tbl-overs-per">39.2 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-circle icon-blue"></i> Total Balls</div>
+                    <div class="tr-value" id="tbl-balls">17,405</div>
+                    <div class="tr-per" id="tbl-balls-per">235 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-bolt icon-gold"></i> Total Runs</div>
+                    <div class="tr-value" id="tbl-runs">24,500</div>
+                    <div class="tr-per" id="tbl-runs-per">331 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-border-all icon-blue"></i> Total Fours (4s)</div>
+                    <div class="tr-value" id="tbl-fours">2,100</div>
+                    <div class="tr-per" id="tbl-fours-per">28 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-rocket icon-purple"></i> Total Sixes (6s)</div>
+                    <div class="tr-value" id="tbl-sixes">1,150</div>
+                    <div class="tr-per" id="tbl-sixes-per">15.5 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-person-running icon-blue"></i> Total Singles</div>
+                    <div class="tr-value" id="tbl-singles">7,500</div>
+                    <div class="tr-per" id="tbl-singles-per">101 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-2 icon-purple"></i> Total Doubles</div>
+                    <div class="tr-value" id="tbl-doubles">1,800</div>
+                    <div class="tr-per" id="tbl-doubles-per">24 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-3 icon-blue"></i> Total Triples</div>
+                    <div class="tr-value" id="tbl-triples">50</div>
+                    <div class="tr-per" id="tbl-triples-per">0.7 / match</div>
+                </div>
+
+                <!-- Bowling Section -->
+                <div class="table-section-title"><i class="fa-solid fa-bullseye"></i> Bowling Metrics</div>
+
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-bullseye icon-blue"></i> Total Wickets</div>
+                    <div class="tr-value" id="tbl-wickets">850</div>
+                    <div class="tr-per" id="tbl-wickets-per">11.5 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-ban icon-purple"></i> Total Dot Balls</div>
+                    <div class="tr-value" id="tbl-dots">6,000</div>
+                    <div class="tr-per" id="tbl-dots-per">81 / match</div>
+                </div>
+
+                <!-- Extras Section -->
+                <div class="table-section-title"><i class="fa-solid fa-plus-circle"></i> Extras Breakdown</div>
+
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-plus icon-gold"></i> Total Extras</div>
+                    <div class="tr-value" id="tbl-extras">1,200</div>
+                    <div class="tr-per" id="tbl-extras-per">16.2 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-wind icon-blue"></i> Total Wides</div>
+                    <div class="tr-value" id="tbl-wides">600</div>
+                    <div class="tr-per" id="tbl-wides-per">8.1 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-xmark icon-purple"></i> Total No Balls</div>
+                    <div class="tr-value" id="tbl-noballs">100</div>
+                    <div class="tr-per" id="tbl-noballs-per">1.4 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-shoe-prints icon-blue"></i> Total Byes</div>
+                    <div class="tr-value" id="tbl-byes">200</div>
+                    <div class="tr-per" id="tbl-byes-per">2.7 / match</div>
+                </div>
+                <div class="table-row">
+                    <div class="tr-label"><i class="fa-solid fa-person-walking icon-purple"></i> Total Leg Byes</div>
+                    <div class="tr-value" id="tbl-legbyes">250</div>
+                    <div class="tr-per" id="tbl-legbyes-per">3.4 / match</div>
+                </div>
+                <div class="table-row alt">
+                    <div class="tr-label"><i class="fa-solid fa-arrows-rotate icon-gold"></i> Overthrow Runs</div>
+                    <div class="tr-value" id="tbl-overthrows">50</div>
+                    <div class="tr-per" id="tbl-overthrows-per">0.7 / match</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Progress bars -->
+        <div class="progress-section">
+            <div class="progress-card glass-panel">
+                <div class="progress-header">
+                    <span><i class="fa-solid fa-ban"></i> Dot Ball %</span>
+                    <span class="progress-pct" id="prog-dot-pct">34.5%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar bg-blue" id="prog-dot" style="width:34.5%"></div>
+                </div>
+                <span class="progress-label">6,000 dot balls of 17,405 total</span>
+            </div>
+            <div class="progress-card glass-panel">
+                <div class="progress-header">
+                    <span><i class="fa-solid fa-border-all"></i> Boundary Runs %</span>
+                    <span class="progress-pct" id="prog-bdry-pct">58.6%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar bg-purple" id="prog-bdry" style="width:58.6%"></div>
+                </div>
+                <span class="progress-label">14,364 boundary runs of 24,500 total</span>
+            </div>
+            <div class="progress-card glass-panel">
+                <div class="progress-header">
+                    <span><i class="fa-solid fa-plus"></i> Extras %</span>
+                    <span class="progress-pct" id="prog-ext-pct">4.9%</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar bg-cyan" id="prog-ext" style="width:4.9%"></div>
+                </div>
+                <span class="progress-label">1,200 extras of 24,500 total runs</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     TEAMS SECTION
+═══════════════════════════════════════════ -->
+<section id="teams" class="section teams-section">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">Franchise Analysis</span>
+            <h2 class="section-title">Team <span class="highlight">Analytics</span></h2>
+            <p class="section-desc">Performance comparison across all 10 IPL 2026 franchises</p>
+        </div>
+
+        <p class="section-desc" style="text-align:center;margin-bottom:28px;"><i class="fa-solid fa-hand" style="color:var(--accent-blue)"></i> &nbsp;Hover over a team card to see full details</p>
+
+        <div class="teams-grid">
+
+            <!-- CSK -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:100ms; --tc:#F9CD05;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#F9CD05;color:#000;">CSK</div>
+                    <div class="tc-name">Chennai Super Kings</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,850</span><small>Runs</small></div>
+                        <div class="tc-s"><span>85</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>132</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:85%;background:#F9CD05;"></div></div>
+                </div>
+            </div>
+
+            <!-- MI -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:150ms; --tc:#004BA0;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#004BA0;color:#fff;">MI</div>
+                    <div class="tc-name">Mumbai Indians</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,750</span><small>Runs</small></div>
+                        <div class="tc-s"><span>90</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>118</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:78%;background:#004BA0;"></div></div>
+                </div>
+            </div>
+
+            <!-- RCB -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:200ms; --tc:#EA1A2A;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#EA1A2A;color:#fff;">RCB</div>
+                    <div class="tc-name">Royal Challengers Bengaluru</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,950</span><small>Runs</small></div>
+                        <div class="tc-s"><span>82</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>145</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:95%;background:#EA1A2A;"></div></div>
+                </div>
+            </div>
+
+            <!-- KKR -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:250ms; --tc:#3A225D;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#3A225D;color:#fff;">KKR</div>
+                    <div class="tc-name">Kolkata Knight Riders</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,800</span><small>Runs</small></div>
+                        <div class="tc-s"><span>88</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>128</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:82%;background:#3A225D;"></div></div>
+                </div>
+            </div>
+
+            <!-- DC -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:300ms; --tc:#0075BF;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#0075BF;color:#fff;">DC</div>
+                    <div class="tc-name">Delhi Capitals</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,600</span><small>Runs</small></div>
+                        <div class="tc-s"><span>75</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>108</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:75%;background:#0075BF;"></div></div>
+                </div>
+            </div>
+
+            <!-- RR -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:350ms; --tc:#EA1F8B;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#EA1F8B;color:#fff;">RR</div>
+                    <div class="tc-name">Rajasthan Royals</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,700</span><small>Runs</small></div>
+                        <div class="tc-s"><span>80</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>115</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:79%;background:#EA1F8B;"></div></div>
+                </div>
+            </div>
+
+            <!-- PBKS -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:400ms; --tc:#D71F28;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#D71F28;color:#fff;">PBKS</div>
+                    <div class="tc-name">Punjab Kings</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,500</span><small>Runs</small></div>
+                        <div class="tc-s"><span>70</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>102</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:72%;background:#D71F28;"></div></div>
+                </div>
+            </div>
+
+            <!-- SRH -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:450ms; --tc:#F7A721;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#F7A721;color:#000;">SRH</div>
+                    <div class="tc-name">Sunrisers Hyderabad</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,900</span><small>Runs</small></div>
+                        <div class="tc-s"><span>85</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>138</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:92%;background:#F7A721;"></div></div>
+                </div>
+            </div>
+
+            <!-- LSG -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:500ms; --tc:#A72B81;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#A72B81;color:#fff;">LSG</div>
+                    <div class="tc-name">Lucknow Super Giants</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,650</span><small>Runs</small></div>
+                        <div class="tc-s"><span>78</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>112</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:77%;background:#A72B81;"></div></div>
+                </div>
+            </div>
+
+            <!-- GT -->
+            <div class="tcard glass-panel" data-animate="fade-up" style="animation-delay:550ms; --tc:#1C4B9E;">
+                <div class="tcard-front-content">
+                    <div class="tc-badge" style="background:#1C4B9E;color:#fff;">GT</div>
+                    <div class="tc-name">Gujarat Titans</div>
+                    <div class="tc-stats">
+                        <div class="tc-s"><span>2,720</span><small>Runs</small></div>
+                        <div class="tc-s"><span>81</span><small>Wickets</small></div>
+                        <div class="tc-s"><span>116</span><small>Sixes</small></div>
+                    </div>
+                    <div class="tc-bar"><div style="width:80%;background:#1C4B9E;"></div></div>
+                </div>
+            </div>
+
+        </div><!-- /teams-grid -->
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     PLAYER AWARDS SECTION
+═══════════════════════════════════════════ -->
+<section id="awards" class="section awards-section">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">🏆 IPL 2026 Verified Data</span>
+            <h2 class="section-title">Season <span class="highlight">Honours Board</span></h2>
+            <p class="section-desc">Official award winners of IPL Season 19 (2026) — verified results from the completed tournament won by RCB.</p>
+        </div>
+
+        <!-- Champion Banner -->
+        <div class="champion-banner" data-animate="fade-up" style="animation-delay:100ms;">
+            <div class="champ-confetti"></div>
+            <div class="champ-inner">
+                <div class="champ-badge">RCB</div>
+                <div class="champ-text">
+                    <div class="champ-title">🏆 IPL 2026 Champions</div>
+                    <div class="champ-name">Royal Challengers Bengaluru</div>
+                    <div class="champ-sub">Defeated Gujarat Titans by 5 wickets in the Final at Narendra Modi Stadium · Player of Final: Virat Kohli (75* off 42)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="awards-grid">
+            <!-- MVP -->
+            <div class="award-card award-mvp" data-animate="zoom-in" style="animation-delay:100ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-trophy"></i></div>
+                <div class="award-label">Most Valuable Player</div>
+                <div class="award-player">Vaibhav Suryavanshi</div>
+                <div class="award-team"><span class="team-dot" style="background:#EA1F8B;"></span> Rajasthan Royals</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>776</span><small>Runs</small></div>
+                    <div class="aw-stat"><span>SR 182.6</span><small>Strike Rate</small></div>
+                    <div class="aw-stat"><span>72</span><small>Sixes</small></div>
+                </div>
+                <div class="award-footnote">Also won: Orange Cap · Emerging Player · Super Sixes</div>
+            </div>
+
+            <!-- Orange Cap -->
+            <div class="award-card award-orange" data-animate="zoom-in" style="animation-delay:200ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-baseball-bat-ball"></i></div>
+                <div class="award-label">🟠 Orange Cap — Most Runs</div>
+                <div class="award-player">Vaibhav Suryavanshi</div>
+                <div class="award-team"><span class="team-dot" style="background:#EA1F8B;"></span> Rajasthan Royals</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>776</span><small>Runs</small></div>
+                    <div class="aw-stat"><span>75</span><small>Fours</small></div>
+                    <div class="aw-stat"><span>Age 14</span><small>Youngest</small></div>
+                </div>
+                <div class="award-footnote">Youngest ever Orange Cap winner in IPL history</div>
+            </div>
+
+            <!-- Purple Cap -->
+            <div class="award-card award-purple" data-animate="zoom-in" style="animation-delay:300ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-wind"></i></div>
+                <div class="award-label">🟣 Purple Cap — Most Wickets</div>
+                <div class="award-player">Kagiso Rabada</div>
+                <div class="award-team"><span class="team-dot" style="background:#1C4B9E;"></span> Gujarat Titans</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>29</span><small>Wickets</small></div>
+                    <div class="aw-stat"><span>Eco 7.4</span><small>Economy</small></div>
+                    <div class="aw-stat"><span>172</span><small>Dot Balls</small></div>
+                </div>
+                <div class="award-footnote">Most wickets in a single IPL 2026 campaign</div>
+            </div>
+
+            <!-- Emerging Player -->
+            <div class="award-card award-emerald" data-animate="zoom-in" style="animation-delay:400ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-seedling"></i></div>
+                <div class="award-label">🌟 Emerging Player of the Season</div>
+                <div class="award-player">Vaibhav Suryavanshi</div>
+                <div class="award-team"><span class="team-dot" style="background:#EA1F8B;"></span> Rajasthan Royals</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>776</span><small>Runs</small></div>
+                    <div class="aw-stat"><span>14</span><small>Years Old</small></div>
+                    <div class="aw-stat"><span>#1</span><small>Season Rank</small></div>
+                </div>
+                <div class="award-footnote">Historical debut season — youngest ever IPL awardee</div>
+            </div>
+
+            <!-- Super Striker -->
+            <div class="award-card award-cyan" data-animate="zoom-in" style="animation-delay:500ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-bolt"></i></div>
+                <div class="award-label">⚡ Super Striker of the Season</div>
+                <div class="award-player">Vaibhav Suryavanshi</div>
+                <div class="award-team"><span class="team-dot" style="background:#EA1F8B;"></span> Rajasthan Royals</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>SR 182.6</span><small>Strike Rate</small></div>
+                    <div class="aw-stat"><span>72</span><small>Sixes</small></div>
+                    <div class="aw-stat"><span>6</span><small>Fifties</small></div>
+                </div>
+                <div class="award-footnote">Also won Super Sixes Award — most sixes in 2026</div>
+            </div>
+
+            <!-- Most Sixes -->
+            <div class="award-card award-blue" data-animate="zoom-in" style="animation-delay:600ms;">
+                <div class="award-ribbon">Official</div>
+                <div class="award-icon-wrap"><i class="fa-solid fa-fire-flame-curved"></i></div>
+                <div class="award-label">🏅 Player of the Final</div>
+                <div class="award-player">Virat Kohli</div>
+                <div class="award-team"><span class="team-dot" style="background:#EA1A2A;"></span> Royal Challengers Bengaluru</div>
+                <div class="award-stats">
+                    <div class="aw-stat"><span>75*</span><small>Runs</small></div>
+                    <div class="aw-stat"><span>42</span><small>Balls</small></div>
+                    <div class="aw-stat"><span>SR 178.6</span><small>Strike Rate</small></div>
+                </div>
+                <div class="award-footnote">Won the final for RCB — their 2nd consecutive title</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     VISUALIZATIONS
+═══════════════════════════════════════════ -->
+<section id="visualizations" class="section" style="background: var(--bg-darker);">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">Charts</span>
+            <h2 class="section-title">Visual <span class="highlight">Insights</span></h2>
+            <p class="section-desc">Interactive data visualisations exploring run rates, distributions, and comparisons.</p>
+        </div>
+
+        <div class="charts-grid">
+            <div class="chart-container glass-panel" data-animate="zoom-in" style="animation-delay:100ms;">
+                <div class="chart-box-header">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Runs Distribution</h3>
+                    <span class="chart-tag">By Shot Type</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="runsDistributionChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container glass-panel" data-animate="zoom-in" style="animation-delay:200ms;">
+                <div class="chart-box-header">
+                    <h3><i class="fa-solid fa-chart-line"></i> Over-wise Run Rate</h3>
+                    <span class="chart-tag">Avg per Over</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="overWiseChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container chart-full glass-panel" data-animate="zoom-in" style="animation-delay:300ms;">
+                <div class="chart-box-header">
+                    <h3><i class="fa-solid fa-chart-bar"></i> Team Comparison — Runs vs Wickets</h3>
+                    <span class="chart-tag">All 10 Franchises</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="teamComparisonChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container glass-panel" data-animate="zoom-in" style="animation-delay:400ms;">
+                <div class="chart-box-header">
+                    <h3><i class="fa-solid fa-chart-pie"></i> Extras Analysis</h3>
+                    <span class="chart-tag">Type Breakdown</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="extrasChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container glass-panel" data-animate="zoom-in" style="animation-delay:500ms;">
+                <div class="chart-box-header">
+                    <h3><i class="fa-solid fa-bars-staggered"></i> Scoring Breakdown</h3>
+                    <span class="chart-tag">Dots vs Runs</span>
+                </div>
+                <div class="canvas-wrapper">
+                    <canvas id="scoringBreakdownChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     EXPORT CENTER
+═══════════════════════════════════════════ -->
+<section id="export" class="section export-section">
+    <div class="container">
+        <div class="section-header" data-animate="fade-up">
+            <span class="section-tag">Download Center</span>
+            <h2 class="section-title">Data <span class="highlight">Export</span></h2>
+            <p class="section-desc">Download comprehensive IPL 2026 season statistics in your preferred format</p>
+        </div>
+
+        <div class="export-grid">
+            <div class="export-card glass-panel" data-animate="fade-up" style="animation-delay:100ms;">
+                <div class="export-icon green"><i class="fa-solid fa-file-excel"></i></div>
+                <h3>Professional Excel Report</h3>
+                <p>Fully styled workbook with 6 analytical sheets, KPIs, colour-coded headers, and formatted numbers. Opens directly in Microsoft Excel.</p>
+                <ul class="export-features">
+                    <li><i class="fa-solid fa-check"></i> Branded title &amp; sub-title</li>
+                    <li><i class="fa-solid fa-check"></i> Match, Runs, Bowling, Extras &amp; KPI sheets</li>
+                    <li><i class="fa-solid fa-check"></i> Colour-coded headers &amp; alternating rows</li>
+                    <li><i class="fa-solid fa-check"></i> Per-match &amp; percentage columns</li>
+                </ul>
+                <button class="btn btn-excel pulse-glow-gold" id="btnExcelDownload" onclick="exportData('excel')">
+                    <i class="fa-solid fa-file-excel"></i> Open in Excel
+                </button>
+            </div>
+
+            <div class="export-card glass-panel" data-animate="fade-up" style="animation-delay:200ms;">
+                <div class="export-icon blue"><i class="fa-solid fa-file-csv"></i></div>
+                <h3>Raw CSV Data</h3>
+                <p>Plain comma-separated values file containing all 17 season metrics — ideal for importing into BI tools, Python, or R for custom analysis.</p>
+                <ul class="export-features">
+                    <li><i class="fa-solid fa-check"></i> All 17 season metrics</li>
+                    <li><i class="fa-solid fa-check"></i> UTF-8 encoded</li>
+                    <li><i class="fa-solid fa-check"></i> Compatible with Excel, Power BI, Tableau</li>
+                    <li><i class="fa-solid fa-check"></i> Instant download</li>
+                </ul>
+                <button class="btn btn-csv" id="btnCsvDownload" onclick="exportData('csv')">
+                    <i class="fa-solid fa-file-csv"></i> Download CSV
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <i class="fa-solid fa-trophy"></i>
+                <span>IPL 19 <span class="highlight">Analytics Hub</span></span>
+            </div>
+            <p class="footer-copy">© 2026 IPL Season 19 Analytics Hub. Data sourced from IPL Official Records &amp; Cricbuzz. For analytical purposes only.</p>
+            <div class="footer-links">
+                <a href="#hero">Overview</a>
+                <a href="#statistics">Statistics</a>
+                <a href="#teams">Teams</a>
+                <a href="#visualizations">Charts</a>
+                <a href="#export">Export</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/xlsx-js-style@1.2.0/dist/xlsx.bundle.js"></script>
+<script src="js/app.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/export.js"></script>
+<script src="js/team_modal.js"></script>
+
+<!-- ═══════════════════════════════════════════
+     TEAM MODAL OVERLAY
+═══════════════════════════════════════════ -->
+<div id="teamModal" class="modal-overlay" onclick="closeTeamModal(event)">
+    <div class="modal-box glass-panel">
+        <button class="modal-close" onclick="closeTeamModal(null)">&times;</button>
+
+        <!-- Header -->
+        <div class="modal-header" id="modalHeader">
+            <div class="modal-badge" id="modalBadge">CSK</div>
+            <div class="modal-title-block">
+                <div class="modal-team-name" id="modalTeamName">Chennai Super Kings</div>
+                <div class="modal-meta" id="modalMeta">📍 Chepauk Stadium, Chennai</div>
+                <div class="modal-finish-badge" id="modalFinish">📊 League Finish: 8th</div>
+            </div>
+        </div>
+
+        <!-- Season Stats Row -->
+        <div class="modal-stats-row">
+            <div class="modal-stat"><span id="ms-runs">2,850</span><small>Runs</small></div>
+            <div class="modal-stat"><span id="ms-wkts">85</span><small>Wickets</small></div>
+            <div class="modal-stat"><span id="ms-sixes">132</span><small>Sixes</small></div>
+            <div class="modal-stat"><span id="ms-fours">285</span><small>Fours</small></div>
+            <div class="modal-stat"><span id="ms-rr">8.62</span><small>Run Rate</small></div>
+            <div class="modal-stat"><span id="ms-hs">210</span><small>Highest Score</small></div>
+        </div>
+
+        <!-- Key People -->
+        <div class="modal-section-title"><i class="fa-solid fa-users"></i> Key Personnel</div>
+        <div class="modal-people">
+            <div class="modal-person"><i class="fa-solid fa-star"></i><span id="mp-captain">MS Dhoni</span><small>Captain</small></div>
+            <div class="modal-person"><i class="fa-solid fa-chalkboard-teacher"></i><span id="mp-coach">Stephen Fleming</span><small>Head Coach</small></div>
+        </div>
+
+        <!-- Top Performers -->
+        <div class="modal-section-title"><i class="fa-solid fa-medal"></i> Top Performers</div>
+        <div class="modal-performers">
+            <div class="modal-performer">
+                <div class="perf-role">🏏 Top Scorer</div>
+                <div class="perf-name" id="mp-scorer">Ruturaj Gaikwad</div>
+                <div class="perf-val" id="mp-scorer-val">542 Runs • Avg 54.2</div>
+            </div>
+            <div class="modal-performer">
+                <div class="perf-role">🎳 Top Wicket Taker</div>
+                <div class="perf-name" id="mp-bowler">Deepak Chahar</div>
+                <div class="perf-val" id="mp-bowler-val">18 Wickets • Eco 7.2</div>
+            </div>
+            <div class="modal-performer">
+                <div class="perf-role">⚡ Super Striker</div>
+                <div class="perf-name" id="mp-striker">Shivam Dube</div>
+                <div class="perf-val" id="mp-striker-val">SR 182.4 • 38 Sixes</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/projects/ucdas-widget.js"></script>
+</body>
+</html>
+
